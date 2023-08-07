@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+  import React, { useState } from 'react';
+  import './App.css';
+  import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+  import CharacterList from './components/CharacterList';
+  import LocationList from './components/LocationList';
+  import EpisodeList from './components/EpisodeList';
+  import { CgMenuRound, CgClose } from 'react-icons/cg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const App = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-export default App;
+    const toggleMenu = () => {
+      setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+    };
+
+    return (
+      <div>
+        <Router>
+          <nav className={`navbar ${isMenuOpen ? 'open' : ''}`}>
+            <div className="logo">
+              <Link to="/" onClick={() => setIsMenuOpen(false)}>
+                Rick and Morty
+              </Link>
+            </div>
+            <div className="menu-icon" onClick={toggleMenu}>
+              {isMenuOpen ? <CgClose /> : <CgMenuRound />}
+            </div>
+            <ul className={`menu ${isMenuOpen ? 'open' : ''}`}>
+              <li>
+                <Link to="/" onClick={() => setIsMenuOpen(false)}>
+                  Characters
+                </Link>
+              </li>
+              <li>
+                <Link to="/locations" onClick={() => setIsMenuOpen(false)}>
+                  Locations
+                </Link>
+              </li>
+              <li>
+                <Link to="/episodes" onClick={() => setIsMenuOpen(false)}>
+                  Episodes
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <h1>Rick and Morty</h1>
+          <Routes>
+            <Route path="/" element={<CharacterList />} />
+            <Route path="/locations" element={<LocationList />} />
+            <Route path="/episodes" element={<EpisodeList />} />
+            <Route path="*" element={<CharacterList />} />
+          </Routes>
+        </Router>
+      </div>
+    );
+  };
+
+  export default App;

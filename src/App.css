@@ -1,38 +1,90 @@
-.App {
+/* Reset some default styles and apply a basic style */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for the h1 header */
+h1 {
   text-align: center;
+  margin-top: 20px;
+  color: #800080; /* Purple */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Style for the navigation bar */
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #003366; /* Dark Blue */
+  padding: 10px;
+  position: sticky; /* Make the navigation bar sticky */
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 1000; /* Ensure the navigation bar appears above other elements */
+}
+
+/* Style for the menu icon */
+.menu-icon {
+  cursor: pointer;
   color: white;
+  font-size: 24px;
+  display: none; /* Hide by default on larger screens */
 }
 
-.App-link {
-  color: #61dafb;
+/* Style for the menu list */
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  background-color: #87CEEB; /* Dark Blue */
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  display: none; /* Hide by default */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Style for the menu items */
+.menu li {
+  display: inline;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Show the menu icon on smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .menu {
+    display: none; /* Hide the menu list on smaller screens */
+  }
+
+  .menu.open {
+    display: flex; /* Show the menu list when open */
+  }
+
+  .menu li {  
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* Adjusted background color when menu is open on mobile */
+  .navbar.open {
+    background-color: #0f519c; /* Bright Blue */
   }
 }
+.menu li a{
+  color: white;
+  text-decoration: none;
+}
+/* Active page link styling */
+.menu li a.active {
+  color: #FFD700; /* Bright Green */
+}
+
+/* Add more CSS rules for active link styling if needed */
