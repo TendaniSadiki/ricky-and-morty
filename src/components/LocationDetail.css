@@ -1,0 +1,39 @@
+/* LocationDetail.css */
+
+.location-detail {
+    padding: 20px;
+  }
+  
+
+  .residents-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .residents-table th,
+  .residents-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .residents-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  .resident-name {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+  }
+  
+  .resident-name:hover {
+    color: #0056b3;
+  }
+  
+  .resident-image {
+    width: 50px;
+    height: auto;
+  }

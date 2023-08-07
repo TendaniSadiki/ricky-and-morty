@@ -1,81 +1,193 @@
 /* CharacterList.css */
+/* Reset some default browser styles */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.container {
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #0074d9;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.search-icon {
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.search-input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+.character-card a {
+  display: block;
+  background-color: #0074d9;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.character-card a:hover {
+  background-color: #0056b3;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
 .character-card {
-    border: 1px solid #ccc;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+
+.character-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.character-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.character-card p {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.page-numbers {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+}
+
+.page-numbers li {
+  display: inline;
+  margin: 0 5px;
+  font-size: 14px;
+}
+
+.page-numbers button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0074d9;
+  font-size: 14px;
+}
+
+.page-numbers .active {
+  color: #b91b6a;
+  font-weight: bold;
+}
+
+/* Search dropdown */
+.search-dropdown {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 10px;
+  z-index: 1;
+  margin-right: 10px;
+}
+.search-dropdown a{
+  display: block;
+    background-color: #0074d9;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.search-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.search-dropdown li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search-result-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.search-result-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.search-result-name {
+  font-weight: bold;
+}
+
+/* Loader */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
     padding: 10px;
-    margin: 10px;
-    text-align: center;
   }
-  
-  /* Modal overlay */
-  .modal-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;/* CharacterList.css */
-    .character-grid {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    
-    .character-card {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin: 10px;
-      text-align: center;
-    }
-    
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .modal-content {
-      background-color: #fff;
-      border-radius: 5px;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-    
-    .modal-content img {
-      max-width: 100%;
-      height: auto;
-    }
-    
-    .modal-content button {
-      background-color: #0074d9;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    
-    .modal-content button:hover {
-      background-color: #0056b3;
-    }
-    
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .character-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
-  
-  /* Modal content */
-  .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 80%;
-    text-align: center;
-  }
-  
+}

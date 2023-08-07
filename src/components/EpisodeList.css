@@ -1,0 +1,75 @@
+/* EpisodeList.css */
+.episode-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .episode-list h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .episode-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .episode-list li {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .episode-list li h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .episode-list p {
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  .episode-list a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .episode-list a:hover {
+    color: #0056b3;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .page-numbers {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+  
+  .page-numbers li {
+    margin: 0 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .page-numbers li.active {
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: none;
+  }
+  

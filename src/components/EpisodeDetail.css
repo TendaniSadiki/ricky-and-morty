@@ -1,0 +1,58 @@
+/* EpisodeDetail.css */
+.episode-detail {
+  padding: 20px;
+}
+
+.episode-detail h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.episode-detail h3 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.episode-detail p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.characters-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.character-item {
+  flex: 0 0 calc(33.33% - 20px);
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.character-item:hover {
+  background-color: #e0e0e0;
+}
+
+.character-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.character-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.character-name {
+  font-size: 16px;
+}
